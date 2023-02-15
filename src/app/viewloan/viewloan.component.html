@@ -1,0 +1,42 @@
+<h2>Loan Details</h2>
+<mat-card>
+    <mat-card-content>
+        <form class="example-form" [formGroup]="viewform">
+
+            <mat-form-field class="example-full-width" appearance="outline" style="font-weight: bolder;">
+                <mat-label style="color: blue;">Loan No</mat-label>
+                <input matInput style="color: black;" formControlName="loanNo">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="outline" style="font-weight: bolder;">
+                <mat-label style="color: blue;">FirstName</mat-label>
+                <input matInput style="color: black;" formControlName="firstName">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="outline" style="font-weight: bolder;">
+                <mat-label style="color: blue;">LastName</mat-label>
+                <input matInput style="color: black;" formControlName="lastName">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="outline" style="font-weight: bolder;">
+                <mat-label style="color: blue;">Property Address</mat-label>
+                <input matInput style="color: black;" formControlName="propertyAddress">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="outline" style="font-weight: bolder;">
+                <mat-label style="color: blue;">Loan Type</mat-label>
+                <input matInput style="color: black;" formControlName="loanType">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="outline" style="font-weight: bolder;">
+                <mat-label style="color: blue;">Loan Term</mat-label>
+                <input matInput style="color: black;" formControlName="loanTerm">
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="outline" style="font-weight: bolder;">
+                <mat-label style="color: blue;">Loan Amount</mat-label>
+                <input matInput style="color: black;" formControlName="loanAmount">
+            </mat-form-field>
+            <div style="text-align: center;">
+                <button mat-raised-button mat-dialog-close color="accent">Close</button>
+            </div>
+
+        </form>
+
+    </mat-card-content>
+
+</mat-card>

@@ -1,0 +1,66 @@
+<h2>Loan Details</h2>
+<div style="font-size:11px">
+
+    <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Search by Loan No</mat-label>
+        <mat-icon matPrefix>search</mat-icon>
+        <input matInput name="loanNo" id="loanNo" placeholder="Loan No" #searchloanNo
+            (keyup)="searchByloanNo(searchloanNo.value)">
+    </mat-form-field>
+
+    <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Search by FirstName</mat-label>
+        <mat-icon matPrefix>search</mat-icon>
+        <input matInput name="firstName" id="firstName" placeholder="FirstName" #searchfirstName
+            (keyup)="searchByfirstName(searchfirstName.value)">
+    </mat-form-field>
+
+    <mat-form-field class="w-100" appearance="outline">
+        <mat-label>Search by LastName</mat-label>
+        <mat-icon matPrefix>search</mat-icon>
+        <input matInput name="lastName" id="lastName" placeholder="LastName" #searchlastName
+            (keyup)="searchBylastName(searchlastName.value)">
+    </mat-form-field>
+</div>
+<div style="width: 800px;" class="mat-elevation-z8">
+
+    <table mat-table [dataSource]="dataSource">
+
+        <ng-container matColumnDef="loanNo">
+            <th mat-header-cell *matHeaderCellDef style="text-align: center; color: black;"> Loan No </th>
+            <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.loanNo}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="firstName">
+            <th mat-header-cell *matHeaderCellDef style="text-align: center;color: black;"> First Name </th>
+            <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.firstName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="lastName">
+            <th mat-header-cell *matHeaderCellDef style="text-align: center;color: black;"> Last Name </th>
+            <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.lastName}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="propertyAddress">
+            <th mat-header-cell *matHeaderCellDef style="text-align: center;color: black;"> Property Address </th>
+            <td mat-cell *matCellDef="let element" style="text-align: center;"> {{element.propertyAddress}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="Action">
+            <th mat-header-cell *matHeaderCellDef style="text-align: center;color: black;"> Action </th>
+            <td mat-cell *matCellDef="let element" style="text-align: center;">
+                <button mat-raised-button (click)="FunctionView(element.loanNo)">View</button>
+                <button mat-icon-button style="margin:5px;" color="primary" (click)="FunctionUpdate(element.loanNo)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button color="warn" style="margin:5px;" (click)="FunctionDelete(element.loanNo)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+</div>
