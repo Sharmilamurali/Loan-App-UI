@@ -10,7 +10,7 @@ export class UserService {
 
   }
   ProceedLogin(inputdata: any) {
-    return this.http.post('http://localhost:8080/authenticate', inputdata);
+    return this.http.post('http://localhost:8080/loan/authenticate', inputdata);
   }
 
   IsLoogedIn() {

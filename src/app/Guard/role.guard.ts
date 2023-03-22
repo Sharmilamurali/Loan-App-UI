@@ -8,7 +8,6 @@ import { UserService } from '../service/User';
 })
 export class RoleGuard implements CanActivate {
   constructor(private service: UserService, private route: Router) {
-
   }
   canActivate() {
     if (this.service.GetRole())
@@ -16,8 +15,6 @@ export class RoleGuard implements CanActivate {
     else {
       this.route.navigate(['homeUser']);
       return false;
-
     }
   }
-
 }

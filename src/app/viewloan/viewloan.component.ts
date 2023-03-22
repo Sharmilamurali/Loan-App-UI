@@ -3,7 +3,6 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { LoanService } from '../service/loan.service';
 
-
 @Component({
   selector: 'app-viewloan',
   templateUrl: './viewloan.component.html',
@@ -20,13 +19,13 @@ export class ViewloanComponent implements OnInit {
   editdata: any;
 
   viewform = new FormGroup({
-    loanNo: new FormControl({value:"",disabled:true}),
-    firstName: new FormControl({value:"",disabled:true}),
-    lastName: new FormControl({value:"",disabled:true}),
-    propertyAddress: new FormControl({value:"",disabled:true}),
-    loanType: new FormControl({value:"",disabled:true}),
-    loanTerm: new FormControl({value:"",disabled:true}),
-    loanAmount: new FormControl({value:"",disabled:true})
+    loanNo: new FormControl({ value: "", disabled: true }),
+    firstName: new FormControl({ value: "", disabled: true }),
+    lastName: new FormControl({ value: "", disabled: true }),
+    propertyAddress: new FormControl({ value: "", disabled: true }),
+    loanType: new FormControl({ value: "", disabled: true }),
+    loanTerm: new FormControl({ value: "", disabled: true }),
+    loanAmount: new FormControl({ value: "", disabled: true })
   });
 
   GetExistdata(loanNo: any) {
@@ -41,5 +40,4 @@ export class ViewloanComponent implements OnInit {
       }
     });
   }
-
 }
