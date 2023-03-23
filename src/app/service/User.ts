@@ -5,22 +5,17 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UserService {
-
   constructor(private http: HttpClient) {
-
   }
   ProceedLogin(inputdata: any) {
     return this.http.post('http://localhost:8080/loans/authenticate', inputdata);
   }
-
   IsLoogedIn() {
     return localStorage.getItem('token') != null;
   }
-
   GetToken() {
     return localStorage.getItem('token') != null ? localStorage.getItem('token') : '';
   }
-
   GetRole() {
     var token = localStorage.getItem('token');
     if (token != null) {

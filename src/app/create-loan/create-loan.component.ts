@@ -11,27 +11,22 @@ import * as alertify from 'alertifyjs';
   styleUrls: ['./create-loan.component.css']
 })
 export class CreateLoanComponent implements OnInit {
-
   constructor(private router: Router, private loanservice: LoanService) { }
-
   ngOnInit(): void {
   }
-
   respdata: any;
-
   RedirectLogin() {
     this.router.navigate(['login']);
   }
   RedirectHome() {
     this.router.navigate(['home']);
   }
-
   reactiveform = new FormGroup({
     loanNo: new FormControl('', Validators.compose([Validators.required, Validators.pattern('[0-9]*')])),
     firstName: new FormControl('', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z ]*$')])),
     lastName: new FormControl('', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z ]*$')])),
     propertyAddress: new FormControl('', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z ]*$')])),
-    loanType: new FormControl('',Validators.pattern('^[a-zA-Z ]*$')),
+    loanType: new FormControl('', Validators.pattern('^[a-zA-Z ]*$')),
     loanTerm: new FormControl(''),
     loanAmount: new FormControl('')
   });
@@ -44,11 +39,8 @@ export class CreateLoanComponent implements OnInit {
           this.RedirectHome();
         } else {
           alertify.error('Failed');
-
         }
-
       });
     }
   }
-
 }

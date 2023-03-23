@@ -6,10 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./status.component.css']
 })
 export class StatusComponent implements OnInit {
-
   constructor() { }
-
   ngOnInit(): void {
   }
-
 }

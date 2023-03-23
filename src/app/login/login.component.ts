@@ -10,8 +10,6 @@ import { UserService } from '../service/User';
 import { Router } from '@angular/router';
 import * as alertify from 'alertifyjs';
 
-
-
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -21,9 +19,7 @@ import * as alertify from 'alertifyjs';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
   constructor(private service: UserService, private route: Router) { }
-
   ngOnInit(): void {
     localStorage.clear();
   }
@@ -36,10 +32,8 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('token', this.resdata.authToken);
           localStorage.setItem('username', this.resdata.username);
           this.route.navigate(['home']);
-        } 
-      },error=>alertify.error('Login Failed'));
-    } 
-
-
+        }
+      }, error => alertify.error('Login Failed'));
+    }
   }
 }

@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -19,9 +18,8 @@ import { TokenInterceptorService } from './service/token-interceptor.service';
 import { ViewloanComponent } from './viewloan/viewloan.component';
 import { MatDialogModule } from "@angular/material/dialog";
 import { UpdateLoanComponent } from './update-loan/update-loan.component';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { HomeUserComponent } from './home-user/home-user.component';
-
 
 @NgModule({
   declarations: [
@@ -47,7 +45,6 @@ import { HomeUserComponent } from './home-user/home-user.component';
     ReactiveFormsModule,
     MatDialogModule,
     MatIconModule
-    
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptorService, multi: true }],
   bootstrap: [AppComponent]

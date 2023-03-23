@@ -9,15 +9,11 @@ import { LoanService } from '../service/loan.service';
   styleUrls: ['./viewloan.component.css']
 })
 export class ViewloanComponent implements OnInit {
-
   constructor(private loanservice: LoanService, @Inject(MAT_DIALOG_DATA) public data: any) { }
-
   ngOnInit(): void {
     this.GetExistdata(this.data.loanNo);
   }
-
   editdata: any;
-
   viewform = new FormGroup({
     loanNo: new FormControl({ value: "", disabled: true }),
     firstName: new FormControl({ value: "", disabled: true }),
@@ -27,7 +23,6 @@ export class ViewloanComponent implements OnInit {
     loanTerm: new FormControl({ value: "", disabled: true }),
     loanAmount: new FormControl({ value: "", disabled: true })
   });
-
   GetExistdata(loanNo: any) {
     this.loanservice.ViewLoanbyId(loanNo).subscribe(item => {
       this.editdata = item;

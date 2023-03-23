@@ -20,24 +20,10 @@ export class AppComponent implements DoCheck {
     } else {
       this.isMenuVisible = false
     }
-
     if (currentroute == '/homeUser') {
       this.isUserMenuVisible = true
     } else {
       this.isUserMenuVisible = false
     }
   }
-  // roleData:any;
-  // roleName:String;
-
-  // GetRole(username:String) {
-
-  //     this.service.ViewRole(username).subscribe(item => {
-  //       this.roleData = item;
-  //       this.roleName=this.roleData.roleName;
-
-
-  //     });
-  //   }
-  // }
 }
